@@ -40,7 +40,7 @@ export function useURL(urlString) {
             tdl.push(parts[i]);
         }
     }
-
+    
     return {
         protocol,
         path,
