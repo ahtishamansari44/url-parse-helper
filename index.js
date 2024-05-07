@@ -1,7 +1,7 @@
 import TDL from "./tdl.json" with { type: "json" };
 
 
-export function extractDomainKeys(urlString) {
+export function useURL(urlString) {
 
     const tdlNames = TDL.tdl;
 
