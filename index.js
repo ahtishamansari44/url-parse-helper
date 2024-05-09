@@ -5,7 +5,14 @@ export function useURL(urlString) {
 
     const tdlNames = TDL.tdl;
 
-    const url = new URL(urlString);
+    let url; 
+
+    if (urlString.startsWith("www.")) {
+        let modifiedUrlString = "http://" + urlString;
+        url = new URL(modifiedUrlString);
+    } else {
+        url = new URL(urlString);
+    }    
 
     // Extract protocol
     const protocol = url.protocol;
@@ -51,4 +58,3 @@ export function useURL(urlString) {
         searchQuery
     };
 }
-
