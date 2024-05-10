@@ -1,25 +1,35 @@
 
 URL Parse Helper Url Parse Assist is a lightweight npm package designed to simplify URL parsing in JavaScript. It provides a set of utilities to effortlessly extract various components such as protocol, pathname, search query, subdomains, domain, and top-level domains from URLs. Simplify your URL parsing tasks with Url Parse Assist!
 
-### Installation You can install the url-parse-helper package via npm:
-```sh 
-npm install url-parse-helper 
+
+## Installation
+
+```sh
+npm  install  url-parse-helper
 ```
 
-### Usage Example Here's a simple example demonstrating how to use the useURL function from url-parse-helper:
-```
+## Usage Example Here's a simple example demonstrating how to use the useURL function from url-parse-helper:
+```javascript
 import { useURL } from 'url-parse-helper';
 ```
-```
-const urlString = "https://www.example.com/path/to/page?query=value";
+```javascript
+const urlString = "https://www.some.example.com.uk/page?query=value";
+
 const urlInfo = useURL(urlString);
 ```
-```
-console.log("Protocol:", urlInfo.protocol);
-console.log("Pathname:", urlInfo.path);
-console.log("Hostname:", urlInfo.host); 
-console.log("Subdomains:", urlInfo.subDomains);
-console.log("Domain:", urlInfo.domain); 
-console.log("Top Level Domains:", urlInfo.tdl);
-console.log("Search Query:", urlInfo.searchQuery);
+
+```javascript
+console.log("Protocol:", urlInfo.protocol); // https:
+
+console.log("Pathname:", urlInfo.path); // /page
+
+console.log("Hostname:", urlInfo.host); // www.some.example.com.uk
+
+console.log("Subdomains:", urlInfo.subDomains); // [ 'www','some' ]
+
+console.log("Domain:", urlInfo.domain); // example
+
+console.log("Top Level Domains:", urlInfo.tdl); // [ 'com','uk' ]
+
+console.log("Search Query:", urlInfo.searchQuery); // [ { key: 'query', value: 'value' } ]
 ```
