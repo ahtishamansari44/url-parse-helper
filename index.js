@@ -15,7 +15,7 @@ export function useURL(urlString) {
     }    
 
     // Extract protocol
-    const protocol = url.protocol;
+    const protocol = url.protocol?.replace(":","");
 
     // Extract pathname
     const path = url.pathname;
@@ -54,7 +54,7 @@ export function useURL(urlString) {
         host,
         domain,
         subDomains,
-        tdl,
+        tdl,       
         searchQuery
     };
 }
