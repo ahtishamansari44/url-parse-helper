@@ -13,7 +13,7 @@ npm  install  url-parse-helper
 import { useURL } from 'url-parse-helper';
 ```
 ```javascript
-const urlString = "https://www.some.example.com.uk/page?query=value";
+const urlString = "https://www.some.example.com.uk/page/page2?query=value";
 
 const urlInfo = useURL(urlString);
 ```
@@ -21,9 +21,11 @@ const urlInfo = useURL(urlString);
 ```javascript
 console.log("Protocol:", urlInfo.protocol); // https:
 
-console.log("Pathname:", urlInfo.path); // /page
-
 console.log("Hostname:", urlInfo.host); // www.some.example.com.uk
+
+console.log("Path:", urlInfo.path); // /page/page2
+
+console.log("Page:", urlInfo.page); // [ 'page','page2' ]
 
 console.log("Subdomains:", urlInfo.subDomains); // [ 'www','some' ]
 

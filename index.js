@@ -20,6 +20,9 @@ export function useURL(urlString) {
     // Extract pathname
     const path = url.pathname;
 
+    let page = url.pathname?.replace(/^\/|\/$/g, '')?.split('/');
+    page = page[0]=="" ? [] : page;
+
     // Extract hostname
     const host = url.hostname;
 
@@ -51,6 +54,7 @@ export function useURL(urlString) {
     return {
         protocol,
         path,
+        page,
         host,
         domain,
         subDomains,
