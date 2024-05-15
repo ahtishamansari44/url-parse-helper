@@ -23,6 +23,13 @@ export function useURL(urlString) {
     let page = url.pathname?.replace(/^\/|\/$/g, '')?.split('/');
     page = page[0]=="" ? [] : page;
 
+    let fileName = null;
+
+    if(page[page?.length - 1]?.includes('.')){
+        fileName = page[page?.length - 1];
+        page.pop();
+    }
+
     // Extract hostname
     const host = url.hostname;
 
@@ -59,6 +66,7 @@ export function useURL(urlString) {
         domain,
         subDomains,
         tdl,       
-        searchQuery
+        searchQuery,
+        fileName
     };
 }
