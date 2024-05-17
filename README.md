@@ -15,13 +15,9 @@ import { useURL } from 'url-parse-helper';
 
 ```javascript
 const urlString = "https://www.some.example.com.uk/page/page2?query=value";
-// OR
-const urlString = "https://www.some.example.com.uk/path/fileName.png";
 
-```
-
-```javascript
 const urlInfo = useURL(urlString);
+
 ```
 
 ```javascript
@@ -40,6 +36,4 @@ console.log("Domain:", urlInfo.domain); // example
 console.log("Top Level Domains:", urlInfo.tdl); // [ 'com','uk' ]
 
 console.log("Search Query:", urlInfo.searchQuery); // [ { key: 'query', value: 'value' } ]
-
-console.log("fileName:", urlInfo.fileName); // fileName.png
 ```
